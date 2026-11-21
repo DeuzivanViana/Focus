@@ -27,9 +27,9 @@ android {
     namespace = "com.focus.app"
 
     defaultConfig {
-        applicationId = "com.focus.app"
-        versionCode = 13
-        versionName = "0.9.1"
+        applicationId = "com.deuzivan.focus"
+        versionCode = 14
+        versionName = "1.0.0"
     }
 
     signingConfigs {

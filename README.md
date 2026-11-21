@@ -4,6 +4,8 @@
 
 Focus has no account, no ads, no analytics and no internet permission. Everything stays on the device.
 
+**Download:** get the latest APK from [Releases](https://github.com/DeuzivanViana/Focus/releases). Android 8.0 or newer.
+
 <p align="center">
   <img src="docs/screenshots/focus.jpg" width="200" alt="Focus timer">
   <img src="docs/screenshots/stats.jpg" width="200" alt="Statistics">
@@ -95,7 +97,7 @@ Calculators such as statistics, streaks with rest days, XP, goal pace, reminder 
 
 ## Building
 
-> The application id is still `com.focus.app`, a placeholder. Choose your own before the first upload to Google Play, because it can never change after that. Set it in `app/build.gradle.kts`.
+> The application id is `com.deuzivan.focus`. Forks that publish their own build must change it in `app/build.gradle.kts`.
 
 Requirements: JDK 17 and the Android SDK (platform 36). A recent Android Studio opens the project directly.
 
