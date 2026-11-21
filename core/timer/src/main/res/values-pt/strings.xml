@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="timer_channel_name">Timer em andamento</string>
+    <string name="timer_channel_desc">Mostra o tempo restante do ciclo atual.</string>
+    <string name="alert_channel_name">Fim de ciclo</string>
+    <string name="alert_channel_desc">Avisa quando um foco ou pausa termina.</string>
+    <string name="phase_focus">Foco</string>
+    <string name="phase_short_break">Pausa curta</string>
+    <string name="phase_long_break">Pausa longa</string>
+    <string name="action_pause">Pausar</string>
+    <string name="action_resume">Retomar</string>
+    <string name="action_skip">Pular</string>
+    <string name="action_stop">Encerrar</string>
+    <string name="status_running">Em andamento</string>
+    <string name="status_paused">Pausado · %1$s restantes</string>
+    <string name="done_focus_title">Foco concluído</string>
+    <string name="done_focus_text">Bom trabalho. Hora da %1$s.</string>
+    <string name="done_break_title">Pausa encerrada</string>
+    <string name="done_break_text">Pronto para o próximo foco?</string>
+</resources>

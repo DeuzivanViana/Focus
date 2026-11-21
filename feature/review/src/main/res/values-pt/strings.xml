@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="review_title">Revisões</string>
+    <string name="review_subtitle">Revise o que estudou depois de 1, 7 e 30 dias, para fixar de verdade.</string>
+    <string name="review_add">Nova revisão</string>
+    <string name="review_empty">Nada para revisar ainda. Depois de estudar um tema, adicione aqui e o Focus agenda revisões em 1, 7 e 30 dias.</string>
+    <string name="review_section_today">Para hoje</string>
+    <string name="review_section_upcoming">Próximas</string>
+    <string name="review_section_finished">Concluídas (%d)</string>
+    <string name="review_all_done">Tudo em dia por hoje.</string>
+    <string name="review_done">Revisei</string>
+    <string name="review_due_today">para hoje</string>
+    <plurals name="review_overdue">
+        <item quantity="one">%d dia de atraso</item>
+        <item quantity="many">%d dias de atraso</item>
+        <item quantity="other">%d dias de atraso</item>
+    </plurals>
+    <string name="review_finished_on">as 3 revisões feitas</string>
+    <string name="review_interval">%dd</string>
+    <string name="review_hint">Toque em um item para excluí-lo.</string>
+    <string name="review_field_title">O que você estudou?</string>
+    <string name="review_field_title_hint">Cap. 3: derivadas</string>
+    <string name="review_field_subject">Matéria</string>
+    <string name="review_no_subject">Nenhuma</string>
+    <string name="review_field_studied">Estudado</string>
+    <string name="review_today">Hoje</string>
+    <string name="review_yesterday">Ontem</string>
+    <string name="review_two_days">Anteontem</string>
+    <string name="review_schedule_preview">Revisões em %1$s, %2$s e %3$s.</string>
+    <string name="review_save">Salvar</string>
+    <string name="review_cancel">Cancelar</string>
+    <string name="review_delete">Excluir</string>
+    <string name="review_delete_title">Excluir revisão?</string>
+</resources>

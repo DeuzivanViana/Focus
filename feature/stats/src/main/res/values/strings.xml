@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="stats_title">Statistics</string>
+    <string name="stats_subtitle">Your focus time, measured day by day.</string>
+    <string name="stats_today">Today</string>
+    <string name="stats_goal_percent">%1$d%% of goal</string>
+    <string name="stats_this_week">This week</string>
+    <string name="stats_week_caption">Mon to today</string>
+    <string name="stats_streak">Streak</string>
+    <string name="stats_best_streak">Best %1$dd</string>
+    <string name="stats_days_short">%1$dd</string>
+    <string name="stats_total">Total</string>
+    <string name="stats_pomodoros">%1$d pomodoros</string>
+    <string name="stats_focus_hours">Focus hours</string>
+    <string name="stats_7d">7 days</string>
+    <string name="stats_30d">30 days</string>
+    <string name="stats_goal_line">Dashed line: daily goal of %1$s</string>
+    <string name="stats_avg30">Daily average (30d)</string>
+    <string name="stats_goal_hit">Goal met (7d)</string>
+    <string name="stats_completion">Completion</string>
+    <string name="stats_completion_caption">pomodoros finished</string>
+    <string name="stats_best_day">Best day</string>
+    <string name="stats_by_hour">Focus by hour of day</string>
+    <string name="stats_peak">Peak at %1$s</string>
+    <string name="stats_no_data">No data yet</string>
+    <string name="stats_by_hour_caption">Minutes focused at each hour, all time</string>
+    <string name="stats_recent">Recent sessions</string>
+    <string name="stats_empty">No sessions yet. Start a focus to begin measuring.</string>
+    <string name="stats_complete">Full pomodoro</string>
+    <string name="stats_interrupted">Interrupted</string>
+    <string name="stats_cd_bars">Bar chart</string>
+    <string name="stats_cd_line">Line chart</string>
+    <string name="stats_cd_compare">Compare periods</string>
+    <string name="stats_compare_title">Compare periods</string>
+    <string name="stats_compare_none">Don\'t compare</string>
+    <string name="stats_compare_7">Last 7 days vs the 7 before</string>
+    <string name="stats_compare_30">Last 30 days vs the 30 before</string>
+    <string name="stats_current">Current</string>
+    <string name="stats_previous">Previous</string>
+    <string name="stats_change_up">+%1$d%% vs previous</string>
+    <string name="stats_change_down">−%1$d%% vs previous</string>
+    <string name="stats_change_flat">Same as previous</string>
+    <string name="stats_change_new">No focus in the previous period</string>
+    <string name="stats_cancel">Cancel</string>
+    <string name="stats_by_subject">Time per subject (30 days)</string>
+    <string name="stats_no_subject">No subject</string>
+    <string name="stats_level_card">Level %1$d · %2$d of %3$d achievements</string>
+    <string name="stats_reflection_card">Reflection: how your sessions felt</string>
+    <string name="stats_heatmap_title">Last 12 months</string>
+    <plurals name="stats_heatmap_active">
+        <item quantity="one">%d day with focus</item>
+        <item quantity="other">%d days with focus</item>
+    </plurals>
+    <string name="stats_heatmap_less">Less</string>
+    <string name="stats_heatmap_more">More</string>
+    <string name="stats_heatmap_rest">Rest day</string>
+</resources>

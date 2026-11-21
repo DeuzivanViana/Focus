@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="stats_title">Estatísticas</string>
+    <string name="stats_subtitle">Seu tempo de foco, medido dia a dia.</string>
+    <string name="stats_today">Hoje</string>
+    <string name="stats_goal_percent">%1$d%% da meta</string>
+    <string name="stats_this_week">Esta semana</string>
+    <string name="stats_week_caption">Seg. a hoje</string>
+    <string name="stats_streak">Sequência</string>
+    <string name="stats_best_streak">Recorde %1$dd</string>
+    <string name="stats_days_short">%1$dd</string>
+    <string name="stats_total">Total</string>
+    <string name="stats_pomodoros">%1$d pomodoros</string>
+    <string name="stats_focus_hours">Horas de foco</string>
+    <string name="stats_7d">7 dias</string>
+    <string name="stats_30d">30 dias</string>
+    <string name="stats_goal_line">Linha tracejada: meta diária de %1$s</string>
+    <string name="stats_avg30">Média diária (30d)</string>
+    <string name="stats_goal_hit">Meta batida (7d)</string>
+    <string name="stats_completion">Conclusão</string>
+    <string name="stats_completion_caption">pomodoros até o fim</string>
+    <string name="stats_best_day">Melhor dia</string>
+    <string name="stats_by_hour">Foco por horário do dia</string>
+    <string name="stats_peak">Pico às %1$s</string>
+    <string name="stats_no_data">Sem dados ainda</string>
+    <string name="stats_by_hour_caption">Minutos focados em cada hora, todo o histórico</string>
+    <string name="stats_recent">Sessões recentes</string>
+    <string name="stats_empty">Nenhuma sessão ainda. Inicie um foco para começar a medir.</string>
+    <string name="stats_complete">Pomodoro completo</string>
+    <string name="stats_interrupted">Interrompido</string>
+    <string name="stats_cd_bars">Gráfico de barras</string>
+    <string name="stats_cd_line">Gráfico de linhas</string>
+    <string name="stats_cd_compare">Comparar períodos</string>
+    <string name="stats_compare_title">Comparar períodos</string>
+    <string name="stats_compare_none">Sem comparação</string>
+    <string name="stats_compare_7">Últimos 7 dias vs os 7 anteriores</string>
+    <string name="stats_compare_30">Últimos 30 dias vs os 30 anteriores</string>
+    <string name="stats_current">Atual</string>
+    <string name="stats_previous">Anterior</string>
+    <string name="stats_change_up">+%1$d%% vs anterior</string>
+    <string name="stats_change_down">−%1$d%% vs anterior</string>
+    <string name="stats_change_flat">Igual ao anterior</string>
+    <string name="stats_change_new">Sem foco no período anterior</string>
+    <string name="stats_cancel">Cancelar</string>
+    <string name="stats_by_subject">Tempo por matéria (30 dias)</string>
+    <string name="stats_no_subject">Sem matéria</string>
+    <string name="stats_level_card">Nível %1$d · %2$d de %3$d conquistas</string>
+    <string name="stats_reflection_card">Reflexão: como foram suas sessões</string>
+    <string name="stats_heatmap_title">Últimos 12 meses</string>
+    <plurals name="stats_heatmap_active">
+        <item quantity="one">%d dia com foco</item>
+        <item quantity="other">%d dias com foco</item>
+    </plurals>
+    <string name="stats_heatmap_less">Menos</string>
+    <string name="stats_heatmap_more">Mais</string>
+    <string name="stats_heatmap_rest">Folga</string>
+</resources>

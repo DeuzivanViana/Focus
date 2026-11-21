@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_name">Focus</string>
+    <string name="widget_description">Inicie um foco e veja sua sequência.</string>
+    <string name="widget_phase_focus">Foco</string>
+    <string name="widget_phase_short">Pausa curta</string>
+    <string name="widget_phase_long">Pausa longa</string>
+    <string name="widget_paused">Pausado</string>
+    <string name="widget_start">Iniciar</string>
+    <string name="widget_pause">Pausar</string>
+    <string name="widget_resume">Retomar</string>
+    <string name="widget_today">Hoje %1$s / %2$s</string>
+    <plurals name="widget_streak">
+        <item quantity="one">%d dia seguido</item>
+        <item quantity="other">%d dias seguidos</item>
+    </plurals>
+</resources>

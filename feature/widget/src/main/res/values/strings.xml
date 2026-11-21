@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_name">Focus</string>
+    <string name="widget_description">Start a focus session and see your streak.</string>
+    <string name="widget_phase_focus">Focus</string>
+    <string name="widget_phase_short">Short break</string>
+    <string name="widget_phase_long">Long break</string>
+    <string name="widget_paused">Paused</string>
+    <string name="widget_start">Start</string>
+    <string name="widget_pause">Pause</string>
+    <string name="widget_resume">Resume</string>
+    <string name="widget_today">Today %1$s / %2$s</string>
+    <plurals name="widget_streak">
+        <item quantity="one">%d-day streak</item>
+        <item quantity="other">%d-day streak</item>
+    </plurals>
+</resources>

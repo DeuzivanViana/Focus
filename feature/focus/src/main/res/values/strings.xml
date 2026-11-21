@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="focus_phase_focus">Focus</string>
+    <string name="focus_phase_short">Short break</string>
+    <string name="focus_phase_long">Long break</string>
+    <string name="focus_status_ready">Ready</string>
+    <string name="focus_status_paused">Paused</string>
+    <string name="focus_start_focus">Start focus</string>
+    <string name="focus_start_break">Start break</string>
+    <string name="focus_pause">Pause</string>
+    <string name="focus_resume">Resume</string>
+    <string name="focus_cd_stop">Stop</string>
+    <string name="focus_cd_skip">Skip phase</string>
+    <string name="focus_today">Today</string>
+    <string name="focus_of_goal">%1$s of %2$s</string>
+    <string name="focus_streak">Streak</string>
+    <string name="focus_week">Week</string>
+    <string name="focus_sessions_today">Sessions today</string>
+    <string name="focus_choose_subject">Choose a subject</string>
+    <string name="focus_no_subject">No subject</string>
+    <string name="focus_level">Level %1$d</string>
+    <string name="focus_xp">%1$d / %2$d XP</string>
+    <string name="focus_pick_title">What are you studying?</string>
+    <string name="focus_pick_task">Task (optional)</string>
+    <string name="focus_no_task">No specific task</string>
+    <string name="focus_pick_done">Done</string>
+    <string name="focus_pick_empty">Create subjects in the Subjects tab.</string>
+    <plurals name="focus_days">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+    <string name="sound_title">Focus sound</string>
+    <string name="sound_cd">Focus sound: %s</string>
+    <string name="sound_none">Silence</string>
+    <string name="sound_rain">Rain</string>
+    <string name="sound_white">White noise</string>
+    <string name="sound_pink">Pink noise</string>
+    <string name="sound_brown">Brown noise</string>
+    <string name="sound_ocean">Ocean</string>
+    <string name="sound_rain_desc">Light rain with scattered drops</string>
+    <string name="sound_white_desc">Even hiss that masks voices</string>
+    <string name="sound_pink_desc">Softer, like steady wind</string>
+    <string name="sound_brown_desc">Deep rumble, like a waterfall far away</string>
+    <string name="sound_ocean_desc">Slow waves coming and going</string>
+    <string name="sound_hint">Plays only while a focus is running, and stops on pause and breaks. Made by the app itself, works offline.</string>
+</resources>

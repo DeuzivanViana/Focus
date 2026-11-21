@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="routine_title">Routine</string>
+    <string name="routine_subtitle">Fixed study times for the week. Focus reminds you before they start.</string>
+    <string name="routine_add">New block</string>
+    <string name="routine_edit">Edit block</string>
+    <string name="routine_empty">No routine yet. Add fixed times, like Calculus on Mon and Wed at 7 pm, and get a reminder before each one.</string>
+    <string name="routine_today">Today · %s</string>
+    <string name="routine_minutes">%d min</string>
+    <string name="routine_now">now</string>
+    <string name="routine_cd_reminder">Reminder on</string>
+    <string name="routine_field_title">Title</string>
+    <string name="routine_field_title_hint">Calculus exercises</string>
+    <string name="routine_field_subject">Subject</string>
+    <string name="routine_no_subject">None</string>
+    <string name="routine_field_days">Repeats on</string>
+    <string name="routine_field_start">Starts at</string>
+    <string name="routine_field_duration">Duration</string>
+    <string name="routine_field_reminder">Reminder</string>
+    <string name="routine_remind_off">Off</string>
+    <string name="routine_remind_at_start">At start</string>
+    <string name="routine_remind_before">%d min before</string>
+    <string name="routine_save">Save</string>
+    <string name="routine_cancel">Cancel</string>
+    <string name="routine_ok">OK</string>
+    <string name="routine_delete">Delete</string>
+</resources>

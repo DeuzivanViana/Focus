@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="routine_title">Rotina</string>
+    <string name="routine_subtitle">Horários fixos de estudo na semana. O Focus avisa antes de começar.</string>
+    <string name="routine_add">Novo horário</string>
+    <string name="routine_edit">Editar horário</string>
+    <string name="routine_empty">Nenhuma rotina ainda. Adicione horários fixos, como Cálculo seg e qua às 19h, e receba um lembrete antes de cada um.</string>
+    <string name="routine_today">Hoje · %s</string>
+    <string name="routine_minutes">%d min</string>
+    <string name="routine_now">agora</string>
+    <string name="routine_cd_reminder">Lembrete ativo</string>
+    <string name="routine_field_title">Título</string>
+    <string name="routine_field_title_hint">Exercícios de cálculo</string>
+    <string name="routine_field_subject">Matéria</string>
+    <string name="routine_no_subject">Nenhuma</string>
+    <string name="routine_field_days">Repete em</string>
+    <string name="routine_field_start">Começa às</string>
+    <string name="routine_field_duration">Duração</string>
+    <string name="routine_field_reminder">Lembrete</string>
+    <string name="routine_remind_off">Sem</string>
+    <string name="routine_remind_at_start">Na hora</string>
+    <string name="routine_remind_before">%d min antes</string>
+    <string name="routine_save">Salvar</string>
+    <string name="routine_cancel">Cancelar</string>
+    <string name="routine_ok">OK</string>
+    <string name="routine_delete">Excluir</string>
+</resources>

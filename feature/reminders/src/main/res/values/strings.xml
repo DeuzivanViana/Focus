@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="reminders_channel">Routine and reviews</string>
+    <string name="reminders_routine_soon">%1$s starts in %2$d min</string>
+    <string name="reminders_routine_now">Time for %1$s</string>
+    <string name="reminders_routine_text">%1$s–%2$s · %3$s</string>
+    <plurals name="reminders_reviews_title">
+        <item quantity="one">%d review for today</item>
+        <item quantity="other">%d reviews for today</item>
+    </plurals>
+    <string name="reminders_weekly_title">Your week: %s of focus</string>
+    <string name="reminders_weekly_up">up %d%% from last week</string>
+    <string name="reminders_weekly_down">down %d%% from last week</string>
+    <string name="reminders_weekly_goal">daily goal met on %d of 7 days</string>
+    <string name="reminders_weekly_top">most studied: %s</string>
+</resources>

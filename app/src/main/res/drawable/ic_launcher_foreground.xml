@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Thin ring with a blue arc: the same motif as the timer. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:pathData="M54,54m-20,0a20,20 0,1 1,40 0a20,20 0,1 1,-40 0"
+        android:strokeWidth="2.5"
+        android:strokeColor="#FF2A2A31" />
+    <path
+        android:pathData="M54,34A20,20 0,0 1,72.1 62.5"
+        android:strokeWidth="4"
+        android:strokeColor="#FF4C8DFF"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M54,54m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0"
+        android:fillColor="#FFEDEDF0" />
+</vector>

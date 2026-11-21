@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="reflection_prompt_title">How was this session?</string>
+    <string name="reflection_prompt_subtitle">%s of focus. A quick rating helps you find your best study conditions.</string>
+    <string name="reflection_note_hint">What helped or got in the way? (optional)</string>
+    <string name="reflection_save">Save</string>
+    <string name="reflection_skip">Skip</string>
+    <string name="reflection_cd_rate">Rate %d of 5</string>
+    <string name="reflection_cd_back">Back</string>
+    <string name="reflection_rating_1">Scattered</string>
+    <string name="reflection_rating_2">Below average</string>
+    <string name="reflection_rating_3">Okay</string>
+    <string name="reflection_rating_4">Focused</string>
+    <string name="reflection_rating_5">Deep focus</string>
+    <string name="insights_title">Reflection</string>
+    <string name="insights_empty">No rated sessions yet. After a focus of 5 minutes or more you can rate it from 1 to 5. Insights show up here.</string>
+    <string name="insights_average_30">Average, 30 days</string>
+    <string name="insights_out_of_5">out of 5</string>
+    <string name="insights_rated">Rated sessions</string>
+    <string name="insights_by_day_part">Quality by time of day</string>
+    <string name="insights_by_subject">Quality by subject</string>
+    <string name="insights_completion">Completed vs interrupted</string>
+    <string name="insights_completed">Completed</string>
+    <string name="insights_interrupted">Interrupted</string>
+    <string name="insights_notes">Recent notes</string>
+    <string name="insights_no_subject">No subject</string>
+    <string name="insights_morning">Morning</string>
+    <string name="insights_afternoon">Afternoon</string>
+    <string name="insights_evening">Evening</string>
+    <string name="insights_night">Night</string>
+    <string name="insights_sentence_best">You rate your %1$s sessions highest (%2$s). Save hard topics for then, and lighter review for the %3$s.</string>
+    <string name="insights_sentence_even">Your focus quality is steady through the day. Pick the times that fit your routine.</string>
+</resources>

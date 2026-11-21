@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="focus_phase_focus">Foco</string>
+    <string name="focus_phase_short">Pausa curta</string>
+    <string name="focus_phase_long">Pausa longa</string>
+    <string name="focus_status_ready">Pronto</string>
+    <string name="focus_status_paused">Pausado</string>
+    <string name="focus_start_focus">Iniciar foco</string>
+    <string name="focus_start_break">Iniciar pausa</string>
+    <string name="focus_pause">Pausar</string>
+    <string name="focus_resume">Retomar</string>
+    <string name="focus_cd_stop">Encerrar</string>
+    <string name="focus_cd_skip">Pular fase</string>
+    <string name="focus_today">Hoje</string>
+    <string name="focus_of_goal">%1$s de %2$s</string>
+    <string name="focus_streak">Sequência</string>
+    <string name="focus_week">Semana</string>
+    <string name="focus_sessions_today">Sessões hoje</string>
+    <string name="focus_choose_subject">Escolher matéria</string>
+    <string name="focus_no_subject">Sem matéria</string>
+    <string name="focus_level">Nível %1$d</string>
+    <string name="focus_xp">%1$d / %2$d XP</string>
+    <string name="focus_pick_title">O que você vai estudar?</string>
+    <string name="focus_pick_task">Tarefa (opcional)</string>
+    <string name="focus_no_task">Sem tarefa específica</string>
+    <string name="focus_pick_done">Pronto</string>
+    <string name="focus_pick_empty">Crie matérias na aba Matérias.</string>
+    <plurals name="focus_days">
+        <item quantity="one">%d dia</item>
+        <item quantity="other">%d dias</item>
+    </plurals>
+    <string name="sound_title">Som de foco</string>
+    <string name="sound_cd">Som de foco: %s</string>
+    <string name="sound_none">Silêncio</string>
+    <string name="sound_rain">Chuva</string>
+    <string name="sound_white">Ruído branco</string>
+    <string name="sound_pink">Ruído rosa</string>
+    <string name="sound_brown">Ruído marrom</string>
+    <string name="sound_ocean">Mar</string>
+    <string name="sound_rain_desc">Chuva leve com gotas espalhadas</string>
+    <string name="sound_white_desc">Chiado uniforme que abafa vozes</string>
+    <string name="sound_pink_desc">Mais suave, como vento constante</string>
+    <string name="sound_brown_desc">Grave, como uma cachoeira ao longe</string>
+    <string name="sound_ocean_desc">Ondas lentas indo e voltando</string>
+    <string name="sound_hint">Toca só com o foco rodando e para na pausa e nos intervalos. Gerado pelo próprio app, funciona offline.</string>
+</resources>

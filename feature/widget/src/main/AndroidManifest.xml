@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <!--
+          Exported because the launcher (system) must deliver APPWIDGET_UPDATE.
+          The provider only re-renders the widget from local state and ignores any extras,
+          so a broadcast sent by another app cannot change data or start the timer.
+        -->
+        <receiver
+            android:name=".FocusWidgetProvider"
+            android:exported="true"
+            android:label="@string/widget_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/focus_widget_info" />
+        </receiver>
+    </application>
+</manifest>

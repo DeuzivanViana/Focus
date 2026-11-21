@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="subjects_title">Matérias</string>
+    <string name="subjects_subtitle">Ligue seus pomodoros ao que você está estudando.</string>
+    <string name="subjects_add">Nova matéria</string>
+    <string name="subjects_edit">Editar matéria</string>
+    <string name="subjects_name">Nome</string>
+    <string name="subjects_color">Cor</string>
+    <string name="subjects_save">Salvar</string>
+    <string name="subjects_cancel">Cancelar</string>
+    <string name="subjects_delete">Excluir</string>
+    <string name="subjects_delete_title">Excluir matéria?</string>
+    <string name="subjects_delete_text">As tarefas dela são removidas. O histórico de foco é mantido, sem matéria.</string>
+    <string name="subjects_empty">Nenhuma matéria ainda. Crie uma para ver seu tempo por matéria.</string>
+    <string name="subjects_time">%1$s nesta semana · %2$s no total</string>
+    <string name="subjects_no_subject">Sem matéria</string>
+    <string name="subjects_tasks_done">%1$d de %2$d tarefas feitas</string>
+    <string name="subjects_no_tasks">Sem tarefas</string>
+    <string name="subjects_add_task">Adicionar tarefa</string>
+    <string name="subjects_cd_add_task">Adicionar tarefa</string>
+    <string name="subjects_cd_delete_task">Excluir tarefa</string>
+    <string name="subjects_cd_edit">Editar</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="review_title">Reviews</string>
+    <string name="review_subtitle">Review what you studied after 1, 7 and 30 days, so it sticks.</string>
+    <string name="review_add">New review</string>
+    <string name="review_empty">Nothing to review yet. After studying a topic, add it here and Focus schedules reviews after 1, 7 and 30 days.</string>
+    <string name="review_section_today">For today</string>
+    <string name="review_section_upcoming">Upcoming</string>
+    <string name="review_section_finished">Finished (%d)</string>
+    <string name="review_all_done">All caught up for today.</string>
+    <string name="review_done">Reviewed</string>
+    <string name="review_due_today">due today</string>
+    <plurals name="review_overdue">
+        <item quantity="one">%d day late</item>
+        <item quantity="other">%d days late</item>
+    </plurals>
+    <string name="review_finished_on">all 3 reviews done</string>
+    <string name="review_interval">%dd</string>
+    <string name="review_hint">Tap an item to delete it.</string>
+    <string name="review_field_title">What did you study?</string>
+    <string name="review_field_title_hint">Ch. 3: derivatives</string>
+    <string name="review_field_subject">Subject</string>
+    <string name="review_no_subject">None</string>
+    <string name="review_field_studied">Studied</string>
+    <string name="review_today">Today</string>
+    <string name="review_yesterday">Yesterday</string>
+    <string name="review_two_days">2 days ago</string>
+    <string name="review_schedule_preview">Reviews on %1$s, %2$s and %3$s.</string>
+    <string name="review_save">Save</string>
+    <string name="review_cancel">Cancel</string>
+    <string name="review_delete">Delete</string>
+    <string name="review_delete_title">Delete review?</string>
+</resources>

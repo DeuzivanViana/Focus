@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="timer_channel_name">Running timer</string>
+    <string name="timer_channel_desc">Shows the time left in the current phase.</string>
+    <string name="alert_channel_name">Phase finished</string>
+    <string name="alert_channel_desc">Alerts you when a focus or break ends.</string>
+    <string name="phase_focus">Focus</string>
+    <string name="phase_short_break">Short break</string>
+    <string name="phase_long_break">Long break</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_resume">Resume</string>
+    <string name="action_skip">Skip</string>
+    <string name="action_stop">Stop</string>
+    <string name="status_running">In progress</string>
+    <string name="status_paused">Paused · %1$s left</string>
+    <string name="done_focus_title">Focus complete</string>
+    <string name="done_focus_text">Good work. Time for a %1$s.</string>
+    <string name="done_break_title">Break over</string>
+    <string name="done_break_text">Ready for the next focus?</string>
+</resources>

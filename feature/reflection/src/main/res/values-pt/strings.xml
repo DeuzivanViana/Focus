@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="reflection_prompt_title">Como foi esta sessão?</string>
+    <string name="reflection_prompt_subtitle">%s de foco. Uma nota rápida ajuda a descobrir suas melhores condições de estudo.</string>
+    <string name="reflection_note_hint">O que ajudou ou atrapalhou? (opcional)</string>
+    <string name="reflection_save">Salvar</string>
+    <string name="reflection_skip">Pular</string>
+    <string name="reflection_cd_rate">Nota %d de 5</string>
+    <string name="reflection_cd_back">Voltar</string>
+    <string name="reflection_rating_1">Disperso</string>
+    <string name="reflection_rating_2">Abaixo da média</string>
+    <string name="reflection_rating_3">Ok</string>
+    <string name="reflection_rating_4">Focado</string>
+    <string name="reflection_rating_5">Foco profundo</string>
+    <string name="insights_title">Reflexão</string>
+    <string name="insights_empty">Nenhuma sessão avaliada ainda. Depois de um foco de 5 minutos ou mais, você pode dar uma nota de 1 a 5. Os insights aparecem aqui.</string>
+    <string name="insights_average_30">Média, 30 dias</string>
+    <string name="insights_out_of_5">de 5</string>
+    <string name="insights_rated">Sessões avaliadas</string>
+    <string name="insights_by_day_part">Qualidade por período</string>
+    <string name="insights_by_subject">Qualidade por matéria</string>
+    <string name="insights_completion">Concluídas vs interrompidas</string>
+    <string name="insights_completed">Concluídas</string>
+    <string name="insights_interrupted">Interrompidas</string>
+    <string name="insights_notes">Notas recentes</string>
+    <string name="insights_no_subject">Sem matéria</string>
+    <string name="insights_morning">Manhã</string>
+    <string name="insights_afternoon">Tarde</string>
+    <string name="insights_evening">Noite</string>
+    <string name="insights_night">Madrugada</string>
+    <string name="insights_sentence_best">Suas sessões de %1$s têm as melhores notas (%2$s). Guarde os temas difíceis para esse período e revisões leves para a %3$s.</string>
+    <string name="insights_sentence_even">A qualidade do seu foco é estável ao longo do dia. Escolha os horários que combinam com sua rotina.</string>
+</resources>

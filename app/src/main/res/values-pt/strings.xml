@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nav_focus">Foco</string>
+    <string name="nav_progress">Progresso</string>
+    <string name="nav_settings">Ajustes</string>
+    <string name="nav_plan">Plano</string>
+    <string name="plan_subjects">Matérias</string>
+    <string name="plan_goals">Metas</string>
+    <string name="plan_routine">Rotina</string>
+    <string name="plan_reviews">Revisões</string>
+</resources>

@@ -1,0 +1,9 @@
+Focus
+Copyright 2026 Deuzivan
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+It includes third-party open source libraries (AndroidX, Jetpack Compose,
+Kotlin, Dagger/Hilt, Room, DataStore, AboutLibraries and others), each under
+its own license. The full list with license texts is generated at build time
+and shown in the app under Settings > About > Open source licenses.

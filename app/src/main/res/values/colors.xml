@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="accent">#FF3271E1</color>
+    <!-- Matches the light theme background, so the first frame never flashes. -->
+    <color name="window_background">#FFF5F5F7</color>
+</resources>

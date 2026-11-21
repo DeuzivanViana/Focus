@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="goals_title">Goals</string>
+    <string name="goals_subtitle">Long-term targets and the pace to reach them.</string>
+    <string name="goals_add">New goal</string>
+    <string name="goals_edit">Edit goal</string>
+    <string name="goals_empty">No goals yet. Set one, like 100 hours of English by March, and see if your pace gets you there.</string>
+    <string name="goals_all_subjects">All subjects</string>
+    <plurals name="goals_days_left">
+        <item quantity="one">%d day left</item>
+        <item quantity="other">%d days left</item>
+    </plurals>
+    <string name="goals_ended_on">ended %s</string>
+    <string name="goals_deadline_on">deadline %s</string>
+    <string name="goals_done_of">%1$s of %2$s</string>
+    <string name="goals_at_this_pace">At this pace</string>
+    <string name="goals_needed_per_day">Needed per day</string>
+    <string name="goals_forecast_none">Focus once to get a forecast</string>
+    <string name="goals_forecast_on_time">done by %s</string>
+    <string name="goals_forecast_late">%1$s by the deadline, done only on %2$s</string>
+    <string name="goals_status_ahead">Ahead</string>
+    <string name="goals_status_on_track">On track</string>
+    <string name="goals_status_behind">Behind</string>
+    <string name="goals_status_completed">Completed</string>
+    <string name="goals_status_expired">Ended</string>
+    <string name="goals_status_not_started">Not started</string>
+    <string name="goals_field_title">Title</string>
+    <string name="goals_field_title_hint">100 h of English</string>
+    <string name="goals_field_subject">Counts focus from</string>
+    <string name="goals_field_hours">Target (hours)</string>
+    <string name="goals_field_deadline">Deadline</string>
+    <string name="goals_save">Save</string>
+    <string name="goals_cancel">Cancel</string>
+    <string name="goals_ok">OK</string>
+    <string name="goals_delete">Delete</string>
+    <string name="goals_delete_title">Delete goal?</string>
+    <string name="goals_delete_text">Your focus history is kept.</string>
+</resources>

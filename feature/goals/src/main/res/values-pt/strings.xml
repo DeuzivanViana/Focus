@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="goals_title">Metas</string>
+    <string name="goals_subtitle">Objetivos de longo prazo e o ritmo para chegar lá.</string>
+    <string name="goals_add">Nova meta</string>
+    <string name="goals_edit">Editar meta</string>
+    <string name="goals_empty">Nenhuma meta ainda. Defina uma, como 100 horas de inglês até março, e veja se o seu ritmo te leva até lá.</string>
+    <string name="goals_all_subjects">Todas as matérias</string>
+    <plurals name="goals_days_left">
+        <item quantity="one">falta %d dia</item>
+        <item quantity="many">faltam %d dias</item>
+        <item quantity="other">faltam %d dias</item>
+    </plurals>
+    <string name="goals_ended_on">terminou em %s</string>
+    <string name="goals_deadline_on">prazo %s</string>
+    <string name="goals_done_of">%1$s de %2$s</string>
+    <string name="goals_at_this_pace">Neste ritmo</string>
+    <string name="goals_needed_per_day">Necessário por dia</string>
+    <string name="goals_forecast_none">Foque uma vez para ter uma previsão</string>
+    <string name="goals_forecast_on_time">concluída em %s</string>
+    <string name="goals_forecast_late">%1$s até o prazo, concluída só em %2$s</string>
+    <string name="goals_status_ahead">Adiantada</string>
+    <string name="goals_status_on_track">No ritmo</string>
+    <string name="goals_status_behind">Atrasada</string>
+    <string name="goals_status_completed">Concluída</string>
+    <string name="goals_status_expired">Encerrada</string>
+    <string name="goals_status_not_started">Não iniciada</string>
+    <string name="goals_field_title">Título</string>
+    <string name="goals_field_title_hint">100 h de inglês</string>
+    <string name="goals_field_subject">Conta o foco de</string>
+    <string name="goals_field_hours">Meta (horas)</string>
+    <string name="goals_field_deadline">Prazo</string>
+    <string name="goals_save">Salvar</string>
+    <string name="goals_cancel">Cancelar</string>
+    <string name="goals_ok">OK</string>
+    <string name="goals_delete">Excluir</string>
+    <string name="goals_delete_title">Excluir meta?</string>
+    <string name="goals_delete_text">Seu histórico de foco é mantido.</string>
+</resources>
