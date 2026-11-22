@@ -111,58 +111,23 @@ fun FocusApp(onStartRequested: () -> Unit) {
             insightsScreen(onBack = back)
             blockerScreen(onBack = back)
         }
-        // Tonal bar instead of a divider line (Material 3 navigation bar).
-        Row(
-            Modifier
-                .fillMaxWidth()
-                .background(FocusColors.Surface)
-                .navigationBarsPadding()
-                .height(72.dp),
-            horizontalArrangement = Arrangement.SpaceEvenly,
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            TopLevel.entries.forEach { dest ->
-                val selected = current == dest.route
-                NavItem(stringResource(dest.label), dest.icon, selected, Modifier.weight(1f)) {
-                    if (!selected) {
-                        navController.navigate(dest.route) {
-                            popUpTo(navController.graph.findStartDestination().id) { saveState = true }
-                            launchSingleTop = true
-                            restoreState = true
-                        }
+        val items = TopLevel.entries.map { BottomBarItem(stringResource(it.label), it.icon) }
+        FocusBottomBar(
+            items = items,
+            selectedIndex = TopLevel.entries.indexOfFirst { it.route == current },
+            onSelect = { i ->
+                val dest = TopLevel.entries[i]
+                if (current != dest.route) {
+                    navController.navigate(dest.route) {
+                        popUpTo(navController.graph.findStartDestination().id) { saveState = true }
+                        launchSingleTop = true
+                        restoreState = true
                     }
                 }
-            }
-        }
+            },
+        )
     }
     // Post-session reflection appears over any screen right after a focus ends.
     ReflectionPromptHost()
 }
 
-@Composable
-private fun NavItem(label: String, icon: ImageVector, selected: Boolean, modifier: Modifier, onClick: () -> Unit) {
-    val tint by animateColorAsState(if (selected) FocusColors.Accent else FocusColors.TextTertiary, tween(200), label = "navTint")
-    val labelColor by animateColorAsState(if (selected) FocusColors.TextPrimary else FocusColors.TextTertiary, tween(200), label = "navLabel")
-    val pill by animateColorAsState(if (selected) FocusColors.AccentDim else Color.Transparent, tween(220), label = "navPill")
-    val pillWidth by animateDpAsState(if (selected) 56.dp else 32.dp, tween(220), label = "navPillWidth")
-    Box(
-        modifier
-            .fillMaxSize()
-            .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null, onClick = onClick),
-        contentAlignment = Alignment.Center,
-    ) {
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            // Active indicator: a soft pill that widens behind the selected icon.
-            Box(Modifier.width(pillWidth).height(30.dp).clip(CircleShape).background(pill), contentAlignment = Alignment.Center) {
-                Icon(icon, contentDescription = label, tint = tint, modifier = Modifier.size(20.dp))
-            }
-            Spacer(Modifier.height(4.dp))
-            Text(
-                label,
-                style = MaterialTheme.typography.labelSmall,
-                color = labelColor,
-                modifier = Modifier.padding(horizontal = 4.dp),
-            )
-        }
-    }
-}

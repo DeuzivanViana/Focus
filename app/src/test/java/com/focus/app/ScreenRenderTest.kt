@@ -25,6 +25,7 @@ import android.graphics.Bitmap
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.ui.unit.dp
@@ -824,4 +825,200 @@ class ScreenRenderTest {
         }
         capture("readme_oled_focus", dir = "readme")
     }
+
+    @Test
+    fun bottomBar() {
+        val items = listOf(
+            com.focus.app.navigation.BottomBarItem("Focus", com.focus.core.designsystem.icon.FocusIcons.Timer),
+            com.focus.app.navigation.BottomBarItem("Plan", com.focus.core.designsystem.icon.FocusIcons.Book),
+            com.focus.app.navigation.BottomBarItem("Progress", com.focus.core.designsystem.icon.FocusIcons.Chart),
+            com.focus.app.navigation.BottomBarItem("Settings", com.focus.core.designsystem.icon.FocusIcons.Tune),
+        )
+        compose.setContent {
+            androidx.compose.foundation.layout.Column {
+                listOf(Triple(true, false, 0), Triple(true, true, 2), Triple(false, false, 1), Triple(true, false, -1)).forEach { (dark, oled, sel) ->
+                    FocusTheme(accent = AccentColor.BLUE, dark = dark, oled = oled) {
+                        com.focus.app.navigation.FocusBottomBar(items = items, selectedIndex = sel, onSelect = {})
+                    }
+                }
+            }
+        }
+        capture("bottombar")
+    }
+
+    // ---- README gallery (English, full app frame with the bottom bar) ----
+
+    private val enEnglish = Subject(1, "English", AccentColor.TEAL)
+    private val enMath = Subject(2, "Calculus", AccentColor.AMBER)
+    private val enHistory = Subject(3, "History", AccentColor.VIOLET)
+    private val enSubjects = listOf(enEnglish, enMath, enHistory)
+    private val enStats = StatsCalculator.compute(sampleSessions, 120, today, zone, enSubjects)
+
+    /** Renders [content] the way the app does: status bar gap, screen, then the floating bottom bar. */
+    private fun appFrame(
+        tab: Int,
+        planTab: Int = -1,
+        dark: Boolean = true,
+        oled: Boolean = false,
+        accent: AccentColor = AccentColor.BLUE,
+        content: @androidx.compose.runtime.Composable () -> Unit,
+    ) {
+        compose.setContent {
+            FocusTheme(accent = accent, dark = dark, oled = oled) {
+                androidx.compose.foundation.layout.Column(Modifier.fillMaxSize().background(FocusColors.Background)) {
+                    androidx.compose.foundation.layout.Spacer(Modifier.size(24.dp))
+                    androidx.compose.foundation.layout.Column(Modifier.weight(1f)) {
+                        if (planTab >= 0) {
+                            com.focus.core.designsystem.component.SegmentedToggle(
+                                options = listOf(R.string.plan_subjects, R.string.plan_goals, R.string.plan_routine, R.string.plan_reviews)
+                                    .map { androidx.compose.ui.res.stringResource(it) },
+                                selectedIndex = planTab,
+                                onSelect = {},
+                                modifier = Modifier.padding(start = 20.dp, end = 20.dp, top = 12.dp).fillMaxWidth(),
+                                fill = true,
+                            )
+                        }
+                        Box(Modifier.weight(1f)) { content() }
+                    }
+                    val icons = com.focus.core.designsystem.icon.FocusIcons
+                    com.focus.app.navigation.FocusBottomBar(
+                        items = listOf(
+                            com.focus.app.navigation.BottomBarItem(androidx.compose.ui.res.stringResource(R.string.nav_focus), icons.Timer),
+                            com.focus.app.navigation.BottomBarItem(androidx.compose.ui.res.stringResource(R.string.nav_plan), icons.Book),
+                            com.focus.app.navigation.BottomBarItem(androidx.compose.ui.res.stringResource(R.string.nav_progress), icons.Chart),
+                            com.focus.app.navigation.BottomBarItem(androidx.compose.ui.res.stringResource(R.string.nav_settings), icons.Tune),
+                        ),
+                        selectedIndex = tab,
+                        onSelect = {},
+                    )
+                }
+            }
+        }
+    }
+
+    @androidx.compose.runtime.Composable
+    private fun EnFocus(style: TimerStyle = TimerStyle.RING, sound: com.focus.core.model.FocusSound = com.focus.core.model.FocusSound.NONE) {
+        FocusScreen(
+            state = FocusUiState(
+                timer = TimerState(TimerPhase.FOCUS, TimerStatus.RUNNING, 25 * 60_000L, 17 * 60_000L + 42_000, completedFocusInCycle = 2),
+                stats = enStats,
+                gamification = sampleGame,
+                subjects = listOf(enEnglish, enMath),
+                tasks = listOf(StudyTask(10, 1, "Phrasal verbs")),
+                selection = FocusSelection(1, 10),
+                timerStyle = style,
+                sound = sound,
+            ),
+            onToggle = {}, onStop = {}, onSkip = {},
+        )
+    }
+
+    private fun enGoals(): GoalsUiState {
+        val goals = listOf(
+            Goal(1, "25 h of English", 1, 25 * 60, today.minusDays(20), today.plusDays(80)),
+            Goal(2, "Calculus exam", 2, 8 * 60, today.minusDays(20), today.plusDays(10)),
+            Goal(3, "Read 22 h of history", 3, 22 * 60, today.minusDays(5), today.plusDays(60)),
+        )
+        return GoalsUiState(goals.map { g -> GoalCalculator.progress(g, enSubjects.firstOrNull { it.id == g.subjectId }, sampleSessions, today, zone) }, enSubjects, loaded = true)
+    }
+
+    private fun gallery(name: String) = capture(name, dir = "gallery")
+
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi")
+    fun galleryFocus() { appFrame(0) { EnFocus(sound = com.focus.core.model.FocusSound.RAIN) }; gallery("focus") }
+
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi")
+    fun galleryStats() { appFrame(2) { StatsScreen(enStats, game = sampleGame) }; gallery("stats") }
+
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi")
+    fun gallerySubjects() {
+        appFrame(1, planTab = 0) {
+            SubjectsScreen(
+                state = SubjectsUiState(
+                    items = enStats.subjectTimes.map { t ->
+                        SubjectItem(t, if (t.subject?.id == 1L) listOf(StudyTask(10, 1, "Phrasal verbs"), StudyTask(11, 1, "Listening: podcast", done = true)) else emptyList())
+                    },
+                    loaded = true,
+                ),
+                onAddSubject = { _, _ -> }, onUpdateSubject = {}, onDeleteSubject = {}, onAddTask = { _, _ -> }, onToggleTask = {}, onDeleteTask = {},
+                initiallyExpanded = 1,
+            )
+        }
+        gallery("subjects")
+    }
+
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi")
+    fun galleryGoals() { appFrame(1, planTab = 1) { GoalsScreen(enGoals(), onSave = {}, onDelete = {}, today = today) }; gallery("goals") }
+
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi")
+    fun galleryRoutine() {
+        val blocks = listOf(
+            RoutineBlock(1, "Calculus", 2, setOf(java.time.DayOfWeek.MONDAY, java.time.DayOfWeek.WEDNESDAY, java.time.DayOfWeek.FRIDAY), 19 * 60, 50, 10),
+            RoutineBlock(2, "Listening", 1, java.time.DayOfWeek.entries.toSet() - java.time.DayOfWeek.SUNDAY, 7 * 60 + 30, 25, 5),
+            RoutineBlock(3, "History reading", 3, setOf(java.time.DayOfWeek.TUESDAY, java.time.DayOfWeek.THURSDAY, java.time.DayOfWeek.SATURDAY), 14 * 60, 40, null),
+            RoutineBlock(4, "Reviews", null, setOf(java.time.DayOfWeek.SUNDAY, java.time.DayOfWeek.WEDNESDAY), 10 * 60, 30, 0),
+        )
+        appFrame(1, planTab = 2) { RoutineScreen(RoutineUiState(blocks, enSubjects, loaded = true), onSave = {}, onDelete = {}, now = today.atTime(19, 20)) }
+        gallery("routine")
+    }
+
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi")
+    fun galleryReviews() {
+        val items = listOf(
+            ReviewItem(1, "Ch. 3: derivatives", 2, today.minusDays(1), 0),
+            ReviewItem(2, "Phrasal verbs", 1, today.minusDays(9), 1),
+            ReviewItem(3, "French Revolution", 3, today.minusDays(3), 1),
+            ReviewItem(4, "Limits", 2, today.minusDays(20), 2),
+            ReviewItem(5, "Present perfect", 1, today.minusDays(40), 3),
+        )
+        appFrame(1, planTab = 3) { ReviewScreen(ReviewUiState(items, enSubjects, loaded = true), onAdd = {}, onComplete = {}, onDelete = {}, today = today) }
+        gallery("reviews")
+    }
+
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi")
+    fun galleryInsights() {
+        val rated = sampleSessions.mapIndexed { i, s ->
+            val hour = java.time.Instant.ofEpochMilli(s.startedAt).atZone(zone).hour
+            s.copy(id = i + 1L, rating = ((if (hour < 12) 4 else 3) + i % 2).coerceAtMost(5), note = if (i % 9 == 0) "Phone in another room helped a lot." else null)
+        }
+        appFrame(-1) { InsightsScreen(ReflectionCalculator.insights(rated, enSubjects, today, zone), onBack = {}) }
+        gallery("reflection")
+    }
+
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi")
+    fun galleryAchievements() { appFrame(-1) { AchievementsScreen(sampleGame, onBack = {}) }; gallery("achievements") }
+
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi")
+    fun galleryBlocker() {
+        appFrame(-1) {
+            BlockerScreen(
+                state = BlockerUiState(
+                    settings = BlockerSettings(enabled = true, mode = BlockMode.WARN, packages = setOf("com.example.app0", "com.example.app2")),
+                    permissions = Permissions(usageAccess = true, blockScreen = true),
+                    apps = listOf("Instagram", "YouTube", "TikTok", "X", "Netflix").mapIndexed { i, n -> InstalledApp("com.example.app$i", n, null) },
+                ),
+                onBack = {}, onEnabled = {}, onMode = {}, onBlocked = { _, _ -> }, onOpenUsageAccess = {}, onOpenOverlay = {},
+            )
+        }
+        gallery("blocker")
+    }
+
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi")
+    fun gallerySettings() { appFrame(3) { SettingsScreen(TimerSettings(), 0, {}, {}, {}, {}, {}) }; gallery("settings") }
+
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi")
+    fun galleryLight() { appFrame(0, dark = false, accent = AccentColor.TEAL) { EnFocus(TimerStyle.TICKS) }; gallery("light") }
+
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi")
+    fun galleryOled() { appFrame(0, oled = true, accent = AccentColor.VIOLET) { EnFocus(TimerStyle.GAUGE) }; gallery("oled") }
+
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi")
+    fun galleryLightStats() { appFrame(2, dark = false, accent = AccentColor.CORAL) { StatsScreen(enStats, game = sampleGame) }; gallery("light_stats") }
+
+    private fun galleryStyle(style: TimerStyle) { appFrame(0) { EnFocus(style) }; gallery("style_" + style.name.lowercase()) }
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi") fun galleryStyleRing() = galleryStyle(TimerStyle.RING)
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi") fun galleryStyleTicks() = galleryStyle(TimerStyle.TICKS)
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi") fun galleryStyleGauge() = galleryStyle(TimerStyle.GAUGE)
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi") fun galleryStyleDial() = galleryStyle(TimerStyle.DIAL)
+    @Test @Config(qualifiers = "en-w411dp-h891dp-xxhdpi") fun galleryStyleMinimal() = galleryStyle(TimerStyle.MINIMAL)
 }

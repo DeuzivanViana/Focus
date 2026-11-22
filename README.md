@@ -8,9 +8,9 @@ Focus has no account, no ads, no analytics and no internet permission. Everythin
 
 <p align="center">
   <img src="docs/screenshots/focus.jpg" width="200" alt="Focus timer">
-  <img src="docs/screenshots/stats.jpg" width="200" alt="Statistics">
   <img src="docs/screenshots/goals.jpg" width="200" alt="Goals">
-  <img src="docs/screenshots/reflection.jpg" width="200" alt="Reflection">
+  <img src="docs/screenshots/stats.jpg" width="200" alt="Statistics">
+  <img src="docs/screenshots/settings.jpg" width="200" alt="Settings">
 </p>
 
 ## Features
@@ -22,6 +22,18 @@ Focus has no account, no ads, no analytics and no internet permission. Everythin
 - **Focus sounds:** rain, white, pink and brown noise, and ocean. They are synthesized on the device in real time, so there are no audio files. They play only while a focus is running.
 - **App blocking:** during a focus, Focus warns you, or optionally blocks the screen, when you open an app from your list. Without the Usage Access permission it still reminds you when you leave the app.
 
+<p align="center">
+  <img src="docs/screenshots/timer-styles.jpg" width="820" alt="Timer styles: ring, ticks, gauge, dial and minimal">
+  <br><sub>Ring, ticks, gauge, dial and minimal</sub>
+</p>
+
+<table align="center">
+  <tr>
+    <td align="center"><img src="docs/screenshots/subjects.jpg" width="200" alt="Subjects and tasks"><br><sub>Subjects and tasks</sub></td>
+    <td align="center"><img src="docs/screenshots/blocker.jpg" width="200" alt="App blocking"><br><sub>App blocking</sub></td>
+  </tr>
+</table>
+
 ### Progress
 - **Statistics:** today, week, streak, totals, 7 and 30-day charts (bars or line, with comparison to the previous period), focus by hour of day, and time per subject.
 - **Yearly heatmap:** one square per day, with intensity relative to your daily goal.
@@ -29,11 +41,30 @@ Focus has no account, no ads, no analytics and no internet permission. Everythin
 - **XP, levels and 19 achievements**, with unlock notifications.
 - **Reflection:** rate each session from 1 to 5 and add a note. Insights show when and in which subject you focus best.
 
+<p align="center">
+  <img src="docs/screenshots/heatmap.jpg" width="430" alt="Yearly heatmap">
+  <br><sub>Yearly heatmap with rest days</sub>
+</p>
+
+<table align="center">
+  <tr>
+    <td align="center"><img src="docs/screenshots/reflection.jpg" width="200" alt="Reflection insights"><br><sub>Reflection insights</sub></td>
+    <td align="center"><img src="docs/screenshots/achievements.jpg" width="200" alt="Achievements"><br><sub>Achievements</sub></td>
+  </tr>
+</table>
+
 ### Planning
 - **Goals:** long-term targets (for example "40 h of English by March") with pace forecasts and the time needed per day.
 - **Weekly routine:** fixed study blocks per weekday with reminders.
 - **Spaced reviews:** a review reminder 1, 7 and 30 days after you study a topic.
 - **Weekly summary** notification on Sundays.
+
+<table align="center">
+  <tr>
+    <td align="center"><img src="docs/screenshots/routine.jpg" width="200" alt="Weekly routine"><br><sub>Weekly routine</sub></td>
+    <td align="center"><img src="docs/screenshots/reviews.jpg" width="200" alt="Spaced reviews"><br><sub>Spaced reviews</sub></td>
+  </tr>
+</table>
 
 ### Everywhere
 - **Home screen widget:** start or pause, today's progress and your streak.
@@ -41,19 +72,13 @@ Focus has no account, no ads, no analytics and no internet permission. Everythin
 - **English and Portuguese**, switchable in the app.
 - **Encrypted backup:** export and import all your data to a file.
 
-<p align="center">
-  <img src="docs/screenshots/timer-styles.jpg" width="820" alt="Timer styles">
-</p>
-<p align="center">
-  <img src="docs/screenshots/heatmap.jpg" width="410" alt="Yearly heatmap">
-</p>
-<p align="center">
-  <img src="docs/screenshots/subjects.jpg" width="200" alt="Subjects">
-  <img src="docs/screenshots/achievements.jpg" width="200" alt="Achievements">
-  <img src="docs/screenshots/blocker.jpg" width="200" alt="App blocking">
-  <img src="docs/screenshots/light.jpg" width="200" alt="Light theme">
-  <img src="docs/screenshots/oled.jpg" width="200" alt="OLED theme">
-</p>
+<table align="center">
+  <tr>
+    <td align="center"><img src="docs/screenshots/light.jpg" width="200" alt="Light"><br><sub>Light</sub></td>
+    <td align="center"><img src="docs/screenshots/oled.jpg" width="200" alt="OLED (pure black)"><br><sub>OLED (pure black)</sub></td>
+    <td align="center"><img src="docs/screenshots/light-stats.jpg" width="200" alt="Light, coral accent"><br><sub>Light, coral accent</sub></td>
+  </tr>
+</table>
 
 ## Tech stack
 
@@ -146,7 +171,7 @@ The full privacy policy is bundled in the app (Settings > Privacy policy).
 
 ## Contributing
 
-Code, identifiers and comments are in English. User-facing text lives in string resources: `values/` for English and `values-pt/` for Portuguese. Please add both when you add a string, and keep both themes and both languages in mind for UI changes. Run `./gradlew testDebugUnitTest` before opening a pull request.
+Code, identifiers and comments are in English. User-facing text lives in string resources: `values/` for English and `values-pt/` for Portuguese. Please add both when you add a string, and keep both themes and both languages in mind for UI changes. Run `./gradlew testDebugUnitTest` before opening a pull request. The README screenshots are rendered by the `gallery*` tests in `app/src/test/java/com/focus/app/ScreenRenderTest.kt` (output in `app/build/gallery/`).
 
 ## License
 

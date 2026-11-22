@@ -294,7 +294,7 @@ fun SettingsScreen(
     }
 }
 
-private const val APP_VERSION = "1.0.0"
+private const val APP_VERSION = "1.0.1"
 
 @Composable
 private fun Section(title: String, content: @Composable () -> Unit) {
