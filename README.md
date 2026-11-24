@@ -140,10 +140,20 @@ Two kinds of secrets are read from the environment or from git-ignored files. Ne
 **Release signing.** Create an upload key with `scripts/create-upload-key.sh [path/to/key.jks]`. It creates the keystore (by default `~/focus-upload.jks`, outside the project) and a `keystore.properties` file, which `.gitignore` excludes. On CI, use these environment variables instead:
 
 ```
-FOCUS_KEYSTORE_FILE  FOCUS_KEYSTORE_PASSWORD  FOCUS_KEY_ALIAS  FOCUS_KEY_PASSWORD
+RELEASE_KEYSTORE_FILE  RELEASE_KEYSTORE_PASSWORD  RELEASE_KEY_ALIAS  RELEASE_KEY_PASSWORD
 ```
 
-Without them, release builds are left unsigned.
+The older `FOCUS_KEYSTORE_FILE`, `FOCUS_KEYSTORE_PASSWORD`, `FOCUS_KEY_ALIAS` and `FOCUS_KEY_PASSWORD` names still work. Without them, release builds are left unsigned.
+
+**GitHub Actions.** `.github/workflows/release.yml` builds a signed APK and AAB and uploads both as workflow artifacts. It runs by hand (Actions > Release > Run workflow) and on every `v*` tag push, where it also creates a GitHub Release with both files attached. It needs these repository secrets (Settings > Secrets and variables > Actions):
+
+| Secret | Value |
+|---|---|
+| `RELEASE_KEYSTORE_BASE64` | The upload keystore encoded as base64: `base64 -w0 focus-upload.jks` (macOS: `base64 -i focus-upload.jks`) |
+| `RELEASE_KEYSTORE_PASSWORD` | Keystore password |
+| `RELEASE_KEY_ALIAS` | Key alias inside the keystore |
+| `RELEASE_KEY_PASSWORD` | Key password |
+| `FOCUS_BACKUP_KEY` | The 64-hex backup key (see below). Optional, but without it CI builds use the public dev key |
 
 **Backup encryption key.** Backups are AES-256-GCM files. The key is 64 hex characters, set in `local.properties`:
 
