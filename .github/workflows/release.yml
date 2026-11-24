@@ -64,10 +64,19 @@ jobs:
         run: |
           APK=$(ls app/build/outputs/apk/release/*.apk | head -n1)
           AAB=$(ls app/build/outputs/bundle/release/*.aab | head -n1)
-          case "$APK" in *unsigned*) echo "::error::APK is unsigned."; exit 1;; esac
+          echo "APK: $APK"
+          echo "AAB: $AAB"
+          case "$APK" in *unsigned*) echo "::error::APK is unsigned (signing secrets not picked up)."; exit 1;; esac
           BT=$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -n1)
-          "$BT/apksigner" verify --print-certs "$APK" | grep -E "Signer #1 certificate (DN|SHA-256)"
-          jarsigner -verify "$AAB" > /dev/null && echo "AAB signature OK"
+          echo "apksigner from $BT"
+          # Print the full result; apksigner exits non-zero if the APK does not verify.
+          "$BT/apksigner" verify --print-certs "$APK" || { echo "::error::APK signature does not verify."; exit 1; }
+          # jarsigner always exits 0 on an unsigned jar, so check its message instead.
+          OUT=$(jarsigner -verify "$AAB" 2>&1 || true)
+          echo "$OUT" | tail -n 5
+          if ! echo "$OUT" | grep -q "jar verified"; then
+            echo "::error::AAB signature does not verify."; exit 1
+          fi
 
       - name: Rename outputs
         id: out
