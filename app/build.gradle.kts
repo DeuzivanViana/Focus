@@ -10,16 +10,21 @@ plugins {
 }
 
 // Release signing (the Play upload key) comes from keystore.properties (kept out of git)
-// or, on CI, from the FOCUS_KEYSTORE_* environment variables. Never commit either.
+// or, on CI, from environment variables. Never commit either.
+// Env names: RELEASE_KEYSTORE_FILE / RELEASE_KEYSTORE_PASSWORD / RELEASE_KEY_ALIAS / RELEASE_KEY_PASSWORD
+// (used by .github/workflows/release.yml). The older FOCUS_KEYSTORE_* / FOCUS_KEY_* names still work.
+fun signingEnv(name: String): String? =
+    (System.getenv("RELEASE_$name") ?: System.getenv("FOCUS_$name"))?.takeIf { it.isNotBlank() }
+
 val keystoreProps = Properties().apply {
     val f = rootProject.file("keystore.properties")
     if (f.exists()) {
         f.inputStream().use { load(it) }
-    } else if (System.getenv("FOCUS_KEYSTORE_FILE") != null) {
-        setProperty("storeFile", System.getenv("FOCUS_KEYSTORE_FILE"))
-        setProperty("storePassword", System.getenv("FOCUS_KEYSTORE_PASSWORD"))
-        setProperty("keyAlias", System.getenv("FOCUS_KEY_ALIAS"))
-        setProperty("keyPassword", System.getenv("FOCUS_KEY_PASSWORD"))
+    } else if (signingEnv("KEYSTORE_FILE") != null) {
+        setProperty("storeFile", signingEnv("KEYSTORE_FILE"))
+        setProperty("storePassword", signingEnv("KEYSTORE_PASSWORD").orEmpty())
+        setProperty("keyAlias", signingEnv("KEY_ALIAS").orEmpty())
+        setProperty("keyPassword", signingEnv("KEY_PASSWORD").orEmpty())
     }
 }
 
